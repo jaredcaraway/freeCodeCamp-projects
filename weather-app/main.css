@@ -23,7 +23,6 @@ h1 {
 
 #icon {
   transform-origin: center;
-  /*   transform: rotateY(-180deg); */
   animation: 8s ease infinite normal rotateIn;
   font-size: 40px;
 }
