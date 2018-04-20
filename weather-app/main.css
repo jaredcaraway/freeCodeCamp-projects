@@ -12,6 +12,7 @@ h1 {
   text-decoration: underline;
   font-weight: bold;
   cursor: pointer;
+  color: deepskyblue;
 }
 
 @keyframes rotateIn {
