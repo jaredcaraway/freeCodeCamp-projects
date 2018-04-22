@@ -35,9 +35,13 @@ function submitQuery() {
 function handleResponse() {
     if (httpRequest.readyState === XMLHttpRequest.DONE) {
         if (httpRequest.status === 200) {
-            alert("Request was good!");
+            displayResults();
         } else {
             alert("Error! Try again.");
         }
     }
+}
+
+function displayResults() {
+    alert("Showing results!");
 }
