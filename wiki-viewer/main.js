@@ -1,6 +1,7 @@
 const random = document.querySelector("#random");
 let search = document.querySelector("#search");
 let httpRequest;
+let payload = null;
 
 const urlFirstHalf = "https://en.wikipedia.org/w/api.php?action=query&srsearch=";
 const urlSecondHalf = "&srprop=snippet&format=json&formatversion=2&list=search&origin=*";
@@ -43,5 +44,7 @@ function handleResponse() {
 }
 
 function displayResults() {
-    alert("Showing results!");
+        //convert string response to JSON and save to variable
+        payload = JSON.parse(httpRequest.responseText);
+        console.log(payload);
 }
