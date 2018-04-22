@@ -8,10 +8,16 @@ const urlSecondHalf = "&srprop=snippet&format=json&formatversion=2&list=search";
 random.addEventListener("click", getRandomPage);
 search.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
-        alert("Enter key pressed");
+        if (!search.value) {
+            alert("No search term entered!");
+        }
     }
 });
 
 function getRandomPage() {
     window.open("https://en.wikipedia.org/wiki/Special:Random", "_blank");
+}
+
+function submitQuery() {
+
 }
