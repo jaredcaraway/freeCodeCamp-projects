@@ -1,5 +1,9 @@
 const random = document.querySelector("#random");
-const search = document.querySelector("#search");
+let search = document.querySelector("#search");
+
+const urlFirstHalf = "https://en.wikipedia.org/w/api.php?action=query&srsearch=";
+const urlSecondHalf = "&srprop=snippet&format=json&formatversion=2&list=search";
+// https://en.wikipedia.org/w/api.php?action=query&srsearch=the%20wiggles&srprop=snippet&format=json&formatversion=2&list=search
 
 random.addEventListener("click", getRandomPage);
 search.addEventListener("keypress", (e) => {
