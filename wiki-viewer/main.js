@@ -1,8 +1,9 @@
 const random = document.querySelector("#random");
 let search = document.querySelector("#search");
+let httpRequest;
 
 const urlFirstHalf = "https://en.wikipedia.org/w/api.php?action=query&srsearch=";
-const urlSecondHalf = "&srprop=snippet&format=json&formatversion=2&list=search";
+const urlSecondHalf = "&srprop=snippet&format=json&formatversion=2&list=search&origin=*";
 // https://en.wikipedia.org/w/api.php?action=query&srsearch=the%20wiggles&srprop=snippet&format=json&formatversion=2&list=search
 
 random.addEventListener("click", getRandomPage);
@@ -21,5 +22,15 @@ function getRandomPage() {
 }
 
 function submitQuery() {
-    alert("Submit query function fired");
+    const encodedTerm = encodeURI(search.value);
+    const query = urlFirstHalf + encodedTerm + urlSecondHalf;
+    httpRequest = new XMLHttpRequest();
+    httpRequest.open('GET', query, true);
+    httpRequest.setRequestHeader( 'Api-User-Agent', 'Example/1.0' );
+    httpRequest.send();
+    console.log(httpRequest.responseText);
+}
+
+function handleResponse() {
+    alert("handleResponse function fired");
 }
