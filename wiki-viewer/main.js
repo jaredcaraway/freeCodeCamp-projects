@@ -25,6 +25,7 @@ function submitQuery() {
     const encodedTerm = encodeURI(search.value);
     const query = urlFirstHalf + encodedTerm + urlSecondHalf;
     httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = handleResponse;
     httpRequest.open('GET', query, true);
     httpRequest.setRequestHeader( 'Api-User-Agent', 'Example/1.0' );
     httpRequest.send();
@@ -32,5 +33,11 @@ function submitQuery() {
 }
 
 function handleResponse() {
-    alert("handleResponse function fired");
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        if (httpRequest.status === 200) {
+            alert("Request was good!");
+        } else {
+            alert("Error! Try again.");
+        }
+    }
 }
