@@ -10,6 +10,8 @@ search.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
         if (!search.value) {
             alert("No search term entered!");
+        } else {
+            submitQuery();
         }
     }
 });
@@ -19,5 +21,5 @@ function getRandomPage() {
 }
 
 function submitQuery() {
-
+    alert("Submit query function fired");
 }
