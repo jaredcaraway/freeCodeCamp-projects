@@ -3,9 +3,9 @@ let search = document.querySelector("#search");
 let httpRequest;
 let payload = null;
 
-const urlFirstHalf = "https://en.wikipedia.org/w/api.php?action=query&srsearch=";
-const urlSecondHalf = "&srprop=snippet&format=json&formatversion=2&list=search&origin=*";
-// https://en.wikipedia.org/w/api.php?action=query&srsearch=the%20wiggles&srprop=snippet&format=json&formatversion=2&list=search
+const urlFirstHalf = "https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=";
+const urlSecondHalf = "&prop=extracts&exsentences=1&explaintext=true&format=json&formatversion=2&origin=*&exintro=true";
+// https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=queen&prop=extracts&exsentences=1&explaintext=true&format=json&formatversion=2&origin=*&exintro=true
 
 random.addEventListener("click", getRandomPage);
 search.addEventListener("keypress", (e) => {
