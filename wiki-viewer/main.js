@@ -1,5 +1,6 @@
 const random = document.querySelector("#random");
 let search = document.querySelector("#search");
+let controls = document.querySelector("#controls");
 let httpRequest;
 let payload = null;
 
@@ -46,5 +47,6 @@ function handleResponse() {
 function displayResults() {
         //convert string response to JSON and save to variable
         payload = JSON.parse(httpRequest.responseText);
+        controls.classList.replace("align-items-center", "align-items-top");
         console.log(payload);
 }
