@@ -52,5 +52,6 @@ function displayResults() {
         if (!resultsShown) {
             controls.classList.replace("align-items-center", "align-items-top");
             resultsShown = true;
+        }
         console.log(payload);
 }
