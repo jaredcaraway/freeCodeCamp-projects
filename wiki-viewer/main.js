@@ -1,6 +1,7 @@
 const random = document.querySelector("#random");
 let search = document.querySelector("#search");
 let controls = document.querySelector("#controls");
+let x = document.querySelector("#clearResults");
 
 let httpRequest;
 let payload = null;
@@ -20,6 +21,7 @@ search.addEventListener("keypress", (e) => {
         }
     }
 });
+x.addEventListener("click", clearResults);
 
 function getRandomPage() {
     window.open("https://en.wikipedia.org/wiki/Special:Random", "_blank");
@@ -54,4 +56,8 @@ function displayResults() {
         resultsShown = true;
     }
     console.log(payload);
+}
+
+function clearResults() {
+    alert("Clicked X!");
 }
