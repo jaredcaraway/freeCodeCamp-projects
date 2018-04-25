@@ -5,3 +5,7 @@ html, body {
 a#random {
     display: block;
 }
+
+span#clearResults {
+    margin-left: 12px;
+}
