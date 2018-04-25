@@ -59,5 +59,10 @@ function displayResults() {
 }
 
 function clearResults() {
-    alert("Clicked X!");
+    if (resultsShown) {
+        // Remove results divs
+        controls.classList.replace("align-items-top", "align-items-center");
+        resultsShown = false;
+    }
+    search.value = "";
 }
