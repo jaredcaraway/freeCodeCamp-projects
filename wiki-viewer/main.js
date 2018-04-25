@@ -31,7 +31,7 @@ function submitQuery() {
     httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = handleResponse;
     httpRequest.open('GET', query, true);
-    httpRequest.setRequestHeader( 'Api-User-Agent', 'Example/1.0' );
+    httpRequest.setRequestHeader('Api-User-Agent', 'Example/1.0');
     httpRequest.send();
     console.log(httpRequest.responseText);
 }
@@ -47,11 +47,11 @@ function handleResponse() {
 }
 
 function displayResults() {
-        //convert string response to JSON and save to variable
-        payload = JSON.parse(httpRequest.responseText);
-        if (!resultsShown) {
-            controls.classList.replace("align-items-center", "align-items-top");
-            resultsShown = true;
-        }
-        console.log(payload);
+    //convert string response to JSON and save to variable
+    payload = JSON.parse(httpRequest.responseText);
+    if (!resultsShown) {
+        controls.classList.replace("align-items-center", "align-items-top");
+        resultsShown = true;
+    }
+    console.log(payload);
 }
